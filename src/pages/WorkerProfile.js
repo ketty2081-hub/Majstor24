@@ -46,14 +46,7 @@ function WorkerProfile() {
 
         <div className="worker-profile">
 
-            <img
-                src={
-                    worker._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
-                    "https://via.placeholder.com/500x350?text=Majstor"
-                }
-                alt={worker.title.rendered}
-                className="profile-image"
-            />
+            
 
             <h1>{worker.title.rendered}</h1>
 
