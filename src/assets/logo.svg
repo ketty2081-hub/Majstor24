@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80">
+  <rect width="420" height="80" rx="14" fill="#1565C0"/>
+
+  <circle cx="42" cy="40" r="22" fill="#FFD54F"/>
+
+  <path d="M34 22 L50 38 L45 43 L29 27 Z" fill="#37474F"/>
+  <rect x="44" y="36" width="8" height="24" rx="3" transform="rotate(45 48 48)" fill="#37474F"/>
+
+  <text x="80" y="50"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="30"
+        font-weight="700"
+        fill="#FFFFFF">
+        Majstor24
+  </text>
+</svg>
