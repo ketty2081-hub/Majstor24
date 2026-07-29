@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import "../styles/Login.css";
 
-
 function Login() {
 
     const navigate = useNavigate();
@@ -21,24 +20,45 @@ function Login() {
             return;
         }
 
-        // Demo prijava
-        if (email === "admin@majstor24.hr") {
+        // Demo admin
+        if (
+            email === "admin@majstor24.hr" &&
+            password === "admin"
+        ) {
 
             login({
                 name: "Administrator",
+                email: email,
                 role: "admin"
             });
 
-        } else {
+            navigate("/");
+            return;
+        }
+
+        // Registrirani korisnik
+        const registeredUser = JSON.parse(
+            localStorage.getItem("registeredUser")
+        );
+
+        if (
+            registeredUser &&
+            registeredUser.email === email &&
+            registeredUser.password === password
+        ) {
 
             login({
-                name: "Korisnik",
+                name: registeredUser.name,
+                email: registeredUser.email,
                 role: "user"
             });
 
+            navigate("/");
+            return;
         }
 
-        navigate("/");
+        alert("Neispravan email ili lozinka!");
+
     }
 
     return (
@@ -47,7 +67,6 @@ function Login() {
 
             <div className="login-card">
 
-            
 
                 <h1>Dobrodošli!</h1>
 

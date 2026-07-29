@@ -20,17 +20,28 @@ function Register() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (formData.password !== formData.confirmPassword) {
-      alert("Lozinke se ne podudaraju.");
-      return;
-    }
+  if (formData.password !== formData.confirmPassword) {
+    alert("Lozinke se ne podudaraju.");
+    return;
+  }
 
-    alert("Registracija uspješna!");
-
-    navigate("/login");
+  const newUser = {
+    name: formData.name,
+    email: formData.email,
+    password: formData.password,
   };
+
+  localStorage.setItem(
+    "registeredUser",
+    JSON.stringify(newUser)
+  );
+
+  alert("Registracija uspješna!");
+
+  navigate("/login");
+};
 
   return (
     <div className="register-container">
